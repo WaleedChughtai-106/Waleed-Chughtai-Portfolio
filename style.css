@@ -453,6 +453,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   padding: 0rem 0.5rem;
   gap: 2rem;
@@ -482,6 +483,27 @@
   box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
   border-radius: 8px;
 }
+.WorkCard3 > .WORKCARD-img {
+  width: 100%;
+  height: 60vh;
+  background: url(Clones/LeetcodeMatricsPic.png) center/cover no-repeat;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+.WorkCard4 > .WORKCARD-img {
+  width: 100%;
+  height: 60vh;
+  background: url(Clones/simpleTodoListApp.png) center/cover no-repeat;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+.WorkCard5 > .WORKCARD-img {
+  width: 100%;
+  height: 60vh;
+  background: url(Clones/dynamicCalculator.jpg) center/cover no-repeat;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
 .WorkcardTitle {
   text-align: center;
   letter-spacing: 0.3rem;
@@ -504,6 +526,7 @@
   background: var(--Bttn-BG-color);
   box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
   transition: box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .workCard-Bttn:hover {

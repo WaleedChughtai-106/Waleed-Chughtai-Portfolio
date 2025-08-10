@@ -144,12 +144,32 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const netflixButton = document.querySelector(".WorkCard1 .workCard-Bttn");
   const studySyncButton = document.querySelector(".WorkCard2 .workCard-Bttn");
-
+  const leetcodeMetricsButton = document.querySelector(
+    ".WorkCard3 .workCard-Bttn"
+  );
+  const simpleToDoAppButton = document.querySelector(
+    ".WorkCard4 .workCard-Bttn"
+  );
+  const dynamicCalculatorAppButton = document.querySelector(
+    ".WorkCard5 .workCard-Bttn"
+  );
+  const TodoAppReactButton = document.querySelector(
+    ".WorkCard6 .workCard-Bttn"
+  );
   netflixButton.addEventListener("click", function () {
     window.open("netflix clone by Waleed Chughtai/index.html", "_blank");
   });
 
   studySyncButton.addEventListener("click", function () {
     window.open("StudySyncProjectClone/StudySyncProject.html", "_blank");
+  });
+  leetcodeMetricsButton.addEventListener("click", function () {
+    window.open("leetCode Matrics App Project/index.html", "_blank");
+  });
+  simpleToDoAppButton.addEventListener("click", function () {
+    window.open("SimpleToDoListApp/index.html", "_blank");
+  });
+  dynamicCalculatorAppButton.addEventListener("click", function () {
+    window.open("Dynamic Calculator/index.html", "_blank");
   });
 });
