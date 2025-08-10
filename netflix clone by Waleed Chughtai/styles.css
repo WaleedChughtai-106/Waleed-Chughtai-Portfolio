@@ -1,0 +1,1335 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  list-style: none;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+}
+
+.main-content-section {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-section {
+  max-width: 984px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
+
+.website-navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.netflix-logo {
+  width: 140px;
+}
+
+.sign-in-btn {
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background: rgb(229, 9, 20);
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.sign-in-btn:hover {
+  background: rgb(200, 23, 32);
+  transition: background 0.3s ease;
+}
+
+.Movies-ticketing-desc-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 4rem;
+  min-height: 100vh;
+  gap: 1.5rem;
+  text-align: center;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 4rem;
+}
+
+.desc-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.membership-details-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 650px;
+}
+
+.desc-line {
+  font-size: 3rem;
+  font-weight: 900;
+  color: white;
+  line-height: 1.1;
+}
+
+.pricing-desc {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: white;
+}
+
+.title-desc-box {
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  justify-content: center;
+}
+
+.details-desc-line {
+  text-align: center;
+  color: #b3b3b3;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.emailField-GetStarted-bttn {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  max-width: 750px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.emailField-GetStarted-bttn > input {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+  padding: 0.9rem 1rem;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: #18181888;
+  color: #fff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.emailField-GetStarted-bttn > input:focus {
+  box-shadow: 0 0 0 3px #e50914;
+  transform: scale(1.01);
+}
+
+.emailField-GetStarted-bttn > input::placeholder {
+  color: #b3b3b3;
+  font-style: normal;
+}
+
+.get-started-btn {
+  padding: 0.9rem 1.5rem;
+  background-color: #e50914;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 400;
+  border-radius: 2px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.get-started-btn:hover {
+  background: #f40612;
+  transition: background 0.3s ease;
+}
+
+.background-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.background-image {
+  position: absolute;
+  inset: 0;
+  background: url("Assets/img/bg.jpg") no-repeat center center/cover;
+  z-index: 0;
+}
+
+.background-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  opacity: 0.65;
+  z-index: 1;
+}
+
+.background-wrapper > *:not(.background-image) {
+  position: relative;
+  z-index: 2;
+}
+
+.background-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(transparent, #141414);
+}
+
+.trendingMoviesSection-reasonsToJoin {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.trending-movies-rail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.heading-TN-desc {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.movie-rail-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.movie-card {
+  flex: 0 0 auto;
+  width: 180px;
+  height: 100px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.movie-card > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.movie-card:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.movie-card::after,
+.mv-card2::after,
+.mv-card3::after,
+.mv-card4::after,
+.mv-card5::after,
+.mv-card6::after {
+  content: attr(data-number);
+  font-size: 3rem;
+  font-weight: bold;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  color: black;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
+    -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+.moreReasonsToJoin-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.reason-section-desc {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.reason-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.reason-grid-card {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 280px;
+}
+
+.reason-grid-desc-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.grid-card-heading {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.grid-card-description {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #b1b2b3;
+  line-height: 1.4;
+}
+
+.grid-card-svg {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.svg-box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-grow: 1;
+}
+
+.grid-card-svg img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 5px rgba(255, 105, 180, 0.7));
+}
+
+.frequently-Asked-ques-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 1100px;
+  padding: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+
+.faq-questions-flex-col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.question-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: rgb(48, 48, 48);
+  height: 75px;
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.question-card:hover {
+  cursor: pointer;
+  background-color: rgb(62, 62, 62);
+}
+
+.question {
+  font-size: 1.5rem;
+}
+
+.plus-svg-container {
+  height: 65px;
+  width: 5.5rem;
+}
+
+.plus-svg-container > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: invert(1);
+}
+
+.Membership-field-gt-strt-btn-section {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.membership-details-desc-2nd {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.emailField-GetStarted-bttn-2nd {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  max-width: 750px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.emailField-GetStarted-bttn-2nd > input {
+  flex: 1;
+  min-width: 300px;
+  max-width: 555px;
+  padding: 0.9rem 1rem;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #fff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.emailField-GetStarted-bttn-2nd > input:focus {
+  box-shadow: 0 0 0 3px #e50914;
+  transform: scale(1.01);
+}
+
+.emailField-GetStarted-bttn-2nd > input::placeholder {
+  color: #b3b3b3;
+  font-style: normal;
+}
+
+.get-started-btn-2nd {
+  padding: 0.9rem 1.5rem;
+  background-color: #e50914;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 400;
+  border-radius: 2px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.get-started-btn-2nd:hover {
+  background: #f40612;
+  transition: background 0.3s ease;
+}
+
+.website-footer {
+  width: 100%;
+  padding: 4rem 2rem;
+  background: #000;
+}
+
+.footer-content {
+  max-width: 1100px;
+  padding: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.footer-links-content {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer-links-content > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-links-content > ul > li > a,
+.question-lnk-Contact-Us-lnk > a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-links-content > ul > li > a:hover,
+.question-lnk-Contact-Us-lnk > a:hover {
+  color: #fff;
+}
+
+.language-bttn-box {
+  width: 5rem;
+  border: 2px solid grey;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem 1.6rem;
+  cursor: pointer;
+}
+
+.language-bttn-box:hover {
+  border-color: #fff;
+}
+
+.netflix-pakistan {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.google-recaptcha-text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13.5px;
+}
+
+.google-recaptcha-text > a {
+  color: rgb(68, 142, 244);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+  .nav-section {
+    padding: 0.5rem 1.5rem;
+  }
+
+  .netflix-logo {
+    width: 80px;
+  }
+
+  .sign-in-btn {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .Movies-ticketing-desc-section {
+    min-height: 50vh;
+    margin-top: 1rem;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .desc-line {
+    font-size: 1.2rem;
+  }
+
+  .pricing-desc {
+    font-size: 0.8rem;
+  }
+
+  .details-desc-line {
+    font-size: 0.7rem;
+  }
+
+  .emailField-GetStarted-bttn {
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .emailField-GetStarted-bttn > input {
+    min-width: 150px;
+    max-width: 250px;
+    padding: 0.6rem;
+  }
+
+  .get-started-btn {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .background-wrapper {
+    height: 60vh;
+  }
+
+  .trendingMoviesSection-reasonsToJoin {
+    padding: 0 1.5rem;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .heading-TN-desc,
+  .reason-section-desc {
+    font-size: 1rem;
+  }
+
+  .movie-card {
+    width: 100px;
+    height: 56px;
+  }
+
+  .movie-card::after,
+  .mv-card2::after,
+  .mv-card3::after,
+  .mv-card4::after,
+  .mv-card5::after,
+  .mv-card6::after {
+    font-size: 1.5rem;
+  }
+
+  .reason-grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .reason-grid-card {
+    min-height: 200px;
+  }
+
+  .grid-card-heading {
+    font-size: 0.9rem;
+  }
+
+  .grid-card-description {
+    font-size: 0.7rem;
+  }
+
+  .grid-card-svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .frequently-Asked-ques-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .question-card {
+    height: 40px;
+    padding: 0.3rem;
+  }
+
+  .question {
+    font-size: 0.8rem;
+  }
+
+  .plus-svg-container {
+    height: 30px;
+    width: 2.5rem;
+  }
+
+  .Membership-field-gt-strt-btn-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .emailField-GetStarted-bttn-2nd {
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .emailField-GetStarted-bttn-2nd > input {
+    min-width: 150px;
+    max-width: 250px;
+    padding: 0.6rem;
+  }
+
+  .get-started-btn-2nd {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .website-footer {
+    padding: 2rem 1.5rem;
+  }
+
+  .footer-links-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-links-content > ul {
+    gap: 0.75rem;
+  }
+
+  .language-bttn-box {
+    width: 4rem;
+    padding: 0.2rem 1rem;
+  }
+
+  .netflix-pakistan,
+  .google-recaptcha-text {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 600px) {
+  .nav-section {
+    padding: 0.75rem 2rem;
+  }
+
+  .netflix-logo {
+    width: 90px;
+  }
+
+  .sign-in-btn {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .Movies-ticketing-desc-section {
+    min-height: 60vh;
+    margin-top: 1.5rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .desc-line {
+    font-size: 1.5rem;
+  }
+
+  .pricing-desc {
+    font-size: 0.9rem;
+  }
+
+  .details-desc-line {
+    font-size: 0.85rem;
+  }
+
+  .emailField-GetStarted-bttn {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .emailField-GetStarted-bttn > input {
+    min-width: 200px;
+    max-width: 300px;
+    padding: 0.7rem;
+  }
+
+  .get-started-btn {
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+  }
+
+  .background-wrapper {
+    height: 70vh;
+  }
+
+  .trendingMoviesSection-reasonsToJoin {
+    padding: 0 2rem;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .heading-TN-desc,
+  .reason-section-desc {
+    font-size: 1.25rem;
+  }
+
+  .movie-card {
+    width: 120px;
+    height: 67px;
+  }
+
+  .movie-card::after,
+  .mv-card2::after,
+  .mv-card3::after,
+  .mv-card4::after,
+  .mv-card5::after,
+  .mv-card6::after {
+    font-size: 2rem;
+  }
+
+  .reason-grid-card {
+    min-height: 220px;
+  }
+
+  .grid-card-heading {
+    font-size: 1rem;
+  }
+
+  .grid-card-description {
+    font-size: 0.8rem;
+  }
+
+  .grid-card-svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .frequently-Asked-ques-section {
+    margin-bottom: 2rem;
+  }
+
+  .question-card {
+    height: 50px;
+    padding: 0.5rem;
+  }
+
+  .question {
+    font-size: 1rem;
+  }
+
+  .plus-svg-container {
+    height: 40px;
+    width: 3.5rem;
+  }
+
+  .Membership-field-gt-strt-btn-section {
+    margin-bottom: 2rem;
+  }
+
+  .emailField-GetStarted-bttn-2nd {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .emailField-GetStarted-bttn-2nd > input {
+    min-width: 200px;
+    max-width: 300px;
+    padding: 0.7rem;
+  }
+
+  .get-started-btn-2nd {
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+  }
+
+  .website-footer {
+    padding: 2.5rem 2rem;
+  }
+
+  .footer-links-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-links-content > ul {
+    gap: 0.8rem;
+  }
+
+  .language-bttn-box {
+    width: 4.5rem;
+    padding: 0.25rem 1.2rem;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 960px) {
+  .nav-section {
+    padding: 1rem 2rem;
+  }
+
+  .netflix-logo {
+    width: 100px;
+  }
+
+  .sign-in-btn {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.85rem;
+  }
+
+  .Movies-ticketing-desc-section {
+    min-height: 70vh;
+    margin-top: 2rem;
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+  }
+
+  .desc-line {
+    font-size: 2rem;
+  }
+
+  .pricing-desc {
+    font-size: 1.1rem;
+  }
+
+  .details-desc-line {
+    font-size: 1rem;
+  }
+
+  .emailField-GetStarted-bttn {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .emailField-GetStarted-bttn > input {
+    min-width: 250px;
+    max-width: 400px;
+    padding: 0.8rem;
+  }
+
+  .get-started-btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .background-wrapper {
+    height: 90vh;
+  }
+
+  .trendingMoviesSection-reasonsToJoin {
+    padding: 0 2rem;
+  }
+
+  .movie-rail-flex {
+    gap: 0.5rem;
+  }
+
+  .movie-card {
+    width: 150px;
+    height: 84px;
+  }
+
+  .reason-grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .reason-grid-card {
+    min-height: 250px;
+    padding: 1rem;
+  }
+
+  .grid-card-heading {
+    font-size: 1.1rem;
+  }
+
+  .grid-card-description {
+    font-size: 0.85rem;
+  }
+
+  .frequently-Asked-ques-section {
+    margin-bottom: 3rem;
+  }
+
+  .question-card {
+    height: 60px;
+    padding: 0.8rem;
+  }
+
+  .question {
+    font-size: 1.2rem;
+  }
+
+  .plus-svg-container {
+    height: 50px;
+    width: 4.5rem;
+  }
+
+  .Membership-field-gt-strt-btn-section {
+    margin-bottom: 3rem;
+  }
+
+  .emailField-GetStarted-bttn-2nd {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .emailField-GetStarted-bttn-2nd > input {
+    min-width: 250px;
+    max-width: 400px;
+    padding: 0.8rem;
+  }
+
+  .get-started-btn-2nd {
+    padding: 0.8rem 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .website-footer {
+    padding: 3rem 2rem;
+  }
+
+  .footer-links-content {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .footer-links-content > ul {
+    gap: 0.9rem;
+  }
+
+  .language-bttn-box {
+    width: 5rem;
+    padding: 0.3rem 1.4rem;
+  }
+}
+
+@media screen and (min-width: 961px) and (max-width: 1280px) {
+  .nav-section {
+    padding: 1.5rem 2rem;
+  }
+
+  .netflix-logo {
+    width: 146px;
+  }
+
+  .sign-in-btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .Movies-ticketing-desc-section {
+    min-height: 80vh;
+    margin-top: 3rem;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .desc-line {
+    font-size: 2.5rem;
+  }
+
+  .pricing-desc {
+    font-size: 1.2rem;
+  }
+
+  .details-desc-line {
+    font-size: 1.1rem;
+  }
+
+  .emailField-GetStarted-bttn {
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .emailField-GetStarted-bttn > input {
+    min-width: 300px;
+    max-width: 450px;
+    padding: 0.9rem;
+  }
+
+  .get-started-btn {
+    padding: 0.9rem 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .background-wrapper {
+    height: 100vh;
+  }
+
+  .trendingMoviesSection-reasonsToJoin {
+    padding: 0 2rem;
+  }
+
+  .movie-card {
+    width: 170px;
+    height: 95px;
+  }
+
+  .reason-grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .reason-grid-card {
+    min-height: 260px;
+  }
+
+  .frequently-Asked-ques-section {
+    margin-bottom: 4rem;
+  }
+
+  .question-card {
+    height: 70px;
+    padding: 1rem;
+  }
+
+  .question {
+    font-size: 1.4rem;
+  }
+
+  .plus-svg-container {
+    height: 60px;
+    width: 5rem;
+  }
+
+  .Membership-field-gt-strt-btn-section {
+    margin-bottom: 4rem;
+  }
+
+  .emailField-GetStarted-bttn-2nd {
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .emailField-GetStarted-bttn-2nd > input {
+    min-width: 300px;
+    max-width: 500px;
+    padding: 0.9rem;
+  }
+
+  .get-started-btn-2nd {
+    padding: 0.9rem 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .website-footer {
+    padding: 4rem 2rem;
+  }
+
+  .footer-links-content {
+    gap: 2rem;
+  }
+
+  .footer-links-content > ul {
+    gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1600px) {
+  .nav-section {
+    max-width: 1200px;
+    padding: 2rem 2rem;
+  }
+
+  .website-navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .netflix-logo {
+    width: 150px;
+  }
+
+  .main-content-section {
+    max-width: 1200px;
+    height: 100vh;
+  }
+
+  .Movies-ticketing-desc-section {
+    min-height: 90vh;
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .desc-line {
+    font-size: 3.5rem;
+  }
+
+  .pricing-desc {
+    font-size: 1.5rem;
+  }
+
+  .details-desc-line {
+    font-size: 1.2rem;
+  }
+
+  .emailField-GetStarted-bttn {
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .emailField-GetStarted-bttn > input {
+    min-width: 350px;
+    max-width: 500px;
+    padding: 1rem;
+  }
+
+  .get-started-btn {
+    padding: 1rem 1.8rem;
+    font-size: 1.3rem;
+  }
+
+  .trendingMoviesSection-reasonsToJoin {
+    max-width: 1200px;
+    margin-top: 5rem;
+  }
+
+  .movie-card {
+    width: 200px;
+    height: 112px;
+  }
+
+  .frequently-Asked-ques-section {
+    margin-bottom: 5rem;
+  }
+
+  .question-card {
+    height: 80px;
+    padding: 1.2rem;
+  }
+
+  .question {
+    font-size: 1.6rem;
+  }
+
+  .plus-svg-container {
+    height: 70px;
+    width: 6rem;
+  }
+
+  .Membership-field-gt-strt-btn-section {
+    margin-bottom: 5rem;
+  }
+
+  .emailField-GetStarted-bttn-2nd {
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .emailField-GetStarted-bttn-2nd > input {
+    min-width: 350px;
+    max-width: 555px;
+    padding: 1rem;
+  }
+
+  .get-started-btn-2nd {
+    padding: 1rem 1.8rem;
+    font-size: 1.3rem;
+  }
+
+  .website-footer {
+    padding: 4rem 2rem;
+  }
+
+  .footer-links-content {
+    gap: 2.5rem;
+  }
+  .background-wrapper {
+    height: 120vh;
+  }
+}
+
+@media screen and (min-width: 1601px) {
+  .main-content-section {
+    max-width: 1400px;
+  }
+
+  .Movies-ticketing-desc-section {
+    min-height: 100vh;
+  }
+
+  .membership-details-desc {
+    max-width: 800px;
+  }
+
+  .desc-line {
+    font-size: 4rem;
+  }
+
+  .pricing-desc {
+    font-size: 1.8rem;
+  }
+
+  .details-desc-line {
+    font-size: 1.4rem;
+  }
+
+  .emailField-GetStarted-bttn {
+    max-width: 900px;
+    margin-bottom: 4rem;
+  }
+
+  .emailField-GetStarted-bttn > input {
+    min-width: 400px;
+    max-width: 600px;
+    padding: 1.2rem;
+  }
+
+  .get-started-btn {
+    padding: 1.2rem 2rem;
+    font-size: 1.5rem;
+  }
+
+  .trendingMoviesSection-reasonsToJoin {
+    max-width: 1400px;
+  }
+
+  .frequently-Asked-ques-section {
+    margin-bottom: 6rem;
+  }
+
+  .question-card {
+    height: 90px;
+    padding: 1.5rem;
+  }
+
+  .question {
+    font-size: 1.8rem;
+  }
+
+  .plus-svg-container {
+    height: 80px;
+    width: 6.5rem;
+  }
+
+  .Membership-field-gt-strt-btn-section {
+    margin-bottom: 6rem;
+  }
+
+  .emailField-GetStarted-bttn-2nd {
+    max-width: 900px;
+    margin-bottom: 4rem;
+  }
+
+  .emailField-GetStarted-bttn-2nd > input {
+    min-width: 400px;
+    max-width: 655px;
+    padding: 1.2rem;
+  }
+
+  .get-started-btn-2nd {
+    padding: 1.2rem 2rem;
+    font-size: 1.5rem;
+  }
+
+  .website-footer {
+    padding: 5rem 2rem;
+  }
+
+  .footer-links-content {
+    gap: 3rem;
+  }
+
+  .footer-links-content > ul {
+    gap: 1.2rem;
+  }
+
+  .language-bttn-box {
+    width: 5.5rem;
+    padding: 0.4rem 1.8rem;
+  }
+}
