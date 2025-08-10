@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: url(images/mohammad-rahmani-LrxSl4ZxoRs-unsplash.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-container {
+  border: none;
+  border-radius: 1.2rem;
+  max-width: 670px;
+  width: 50%;
+  padding: 1.2rem;
+
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.228);
+  gap: 1.5rem;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.user-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.user-input-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+#user-input {
+  width: 80%;
+  padding: 0.5rem;
+}
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #299f5d;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+  background: conic-gradient(#299f5d var(--progress-degree, 0%), #283a2e 0%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.circle span {
+  position: relative;
+  z-index: 2;
+}
+.stats-container {
+  display: none;
+}
+.progress {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.stats-card {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+.StatCard_info {
+  padding: 0.4rem;
+  width: 30%;
+  min-height: 2.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 550;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 158, 31);
+}
+.StatCard_info > span {
+  font-size: 0.9rem;
+}
+.StatCard_info:hover {
+  background: rgb(144, 81, 0);
+  transform: scale(1.1);
+  transition: background 2s 2ms ease-in-out, transform 1s ease;
+}
+.user-input-container > input {
+  background: rgb(136, 136, 136);
+  border: none;
+  outline: none;
+  color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.user-input-container > input::placeholder {
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.user-input-container > button {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  color: white;
+  font-weight: 550;
+  background: rgb(224, 146, 44);
+}
+.user-input-container > button:hover {
+  background: rgb(255, 158, 31);
+  transform: scale(1.1);
+  transition: background 1s ease-in-out, transform 1s ease;
+}
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .main-container {
+    max-width: 500px;
+    width: 100%;
+  }
+  #user-input {
+    width: 75%;
+  }
+  .circle {
+    width: 100px;
+    height: 100px;
+    font-size: 0.9rem;
+  }
+  .stats-card {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .StatCard_info > span {
+    font-size: 0.8rem;
+  }
+  .user-input-container > button {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .main-container {
+    max-width: 500px;
+    width: 100%;
+  }
+  .heading {
+    font-size: 1.55rem;
+  }
+  .user-container > p {
+    font-size: 0.9rem;
+  }
+  #user-input {
+    width: 70%;
+  }
+  .circle {
+    width: 100px;
+    height: 100px;
+    font-size: 0.8rem;
+  }
+  .stats-card {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .StatCard_info > span {
+    font-size: 0.8rem;
+  }
+  .user-input-container > button {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 425px) and (max-width: 766px) {
+  .main-container {
+    max-width: 400px;
+    width: 100%;
+  }
+  .heading {
+    font-size: 1.55rem;
+  }
+  .user-container > p {
+    font-size: 0.9rem;
+  }
+  #user-input {
+    width: 70%;
+  }
+  .circle {
+    width: 90px;
+    height: 90px;
+    font-size: 0.7rem;
+  }
+  .stats-card {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .StatCard_info > span {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+  .user-input-container > button {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 424px) {
+  body {
+    background: url(images/blake-connally-B3l0g6HLxr8-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .main-container {
+    max-width: fit-content;
+    width: 100%;
+  }
+  .heading {
+    font-size: 1.55rem;
+  }
+  .user-container > p {
+    font-size: 0.9rem;
+  }
+  #user-input {
+    width: 70%;
+  }
+  .circle {
+    width: 90px;
+    height: 90px;
+    font-size: 0.7rem;
+  }
+  .stats-card {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .StatCard_info > span {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+  .user-input-container > button {
+    font-size: 0.7rem;
+  }
+}

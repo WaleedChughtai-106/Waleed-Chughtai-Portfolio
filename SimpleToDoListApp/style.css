@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  list-style: none;
+}
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e5e5e5;
+}
+.ToDoListContainer {
+  max-width: 500px;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 0.5rem;
+}
+.TDL-heading {
+  text-align: center;
+}
+.user-input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.user-input-container > input {
+  width: 60%;
+  padding: 0.4rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border: 1px solid rgb(164, 164, 164);
+}
+.user-input-container > input::placeholder {
+  font-weight: 500;
+}
+.Add-btn {
+  padding: 0.4rem 0.75rem;
+  border: none;
+  border-radius: 0.2rem;
+  color: white;
+  background-color: #3498db;
+  cursor: pointer;
+}
+
+.Add-btn:hover {
+  background-color: #2988b9;
+}
+.Delete-all-btn {
+  padding: 0.4rem 0.75rem;
+  color: white;
+  border: none;
+  border-radius: 0.2rem;
+  background-color: #e74c3c;
+  cursor: pointer;
+}
+.Delete-all-btn:hover {
+  background-color: #c0392b;
+}
+#tasks-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.task-item {
+  width: 100%;
+  padding: 0.6rem;
+  background-color: rgb(211, 211, 211);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.task-actions {
+  display: flex;
+  gap: 1.5rem;
+}
+.task-actions button {
+  background: transparent;
+  border: none;
+}
+.task-actions button:hover {
+  text-decoration: underline;
+}
+.completed span {
+  text-decoration: line-through;
+  color: rgb(152, 152, 152);
+}

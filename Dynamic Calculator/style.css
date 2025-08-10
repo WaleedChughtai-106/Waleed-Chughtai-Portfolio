@@ -1,0 +1,143 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --Bg-color: #17181a;
+  --resulting-text: #ffffff;
+  --All-Clear-btn-bg: #616161;
+  --All-Clear-btn-Text: #a5a5a5;
+  --Operators-bg-color: #005db2;
+  --Mul-Div-Add-text-color: #339dff;
+  --Diff-op-text-color: #24a5ff;
+  --EqualsTo-bg-color: #1991ff;
+  --EqualsTo-text-color: #b2daff;
+  --Numbers-bg-color: #303136;
+  --Numbers-txt-color: #29a8ff;
+}
+/* .lightmode {
+  --Bg-color: linear-gradient(#f7f8fb, #f7f8fb19);
+  --resulting-text: #4242426b;
+  --All-Clear-btn-bg: #ffffff60;
+  --All-Clear-btn-Text: #339dff;
+  --Operators-bg-color: linear-gradient(#add8ff, #1885ec10);
+  --Mul-Div-Add-text-color: #339dff;
+  --Diff-op-text-color: #24a5ff;
+  --EqualsTo-bg-color: #19acff;
+  --EqualsTo-text-color: #b2daff;
+  --Numbers-bg-color: linear-gradient(#ffffff85, #ffffff17);
+  --Numbers-txt-color: #ffffff;
+} */
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #b2daff;
+}
+.main-content-calculator {
+  width: 320px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  background-color: var(--Bg-color);
+  backdrop-filter: blur(10px);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  position: relative;
+}
+.main-content-calculator::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  background-image: url(assets/images/Charater.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  top: 0%;
+  left: -53%;
+}
+.result-display-container {
+  height: 10%;
+  width: 80%;
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+}
+.result-display-container > input {
+  width: 100%;
+  background-color: transparent;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  z-index: 2;
+  color: var(--resulting-text);
+}
+
+.buttons-container {
+  height: 50%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1rem;
+  align-self: center;
+}
+.buttons-container button {
+  width: 3.3rem;
+  height: 3.3rem;
+  border-radius: 0.8rem;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.6);
+  transition: box-shadow 0.2s ease;
+}
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.AC-DEL-bg {
+  background-color: var(--All-Clear-btn-bg);
+  color: var(--All-Clear-btn-Text);
+}
+.operators_bg {
+  background-color: var(--Operators-bg-color);
+}
+.numbers_bg {
+  background-color: var(--Numbers-bg-color);
+  color: var(--Numbers-txt-color);
+}
+.EqualTo_bg {
+  background-color: var(--EqualsTo-bg-color);
+  color: var(--EqualsTo-text-color);
+}
+.add_mul_div_mod_textColor {
+  color: var(--Mul-Div-Add-text-color);
+}
+.diff_color {
+  color: var(--Diff-op-text-color);
+}
+
+@media (max-width: 500px) {
+  .main-content-calculator::before {
+    background-image: url(assets/images/peeking\ Character.png);
+    top: -58%;
+    left: 2%;
+  }
+  .container {
+    width: 100svw;
+    height: 100svh;
+  }
+}

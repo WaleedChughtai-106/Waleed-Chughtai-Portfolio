@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="ToDoListContainer">
+        <h1 class="TDL-heading">To-Do-List</h1>
+        <div class="user-input-container">
+          <input
+            type="text"
+            name="Task_entry"
+            id="Task_entry"
+            placeholder="Enter new task..."
+          />
+          <button class="Add-btn" id="Add_task-btn">Add</button>
+
+          <button class="Delete-all-btn" id="DeleteAll_task-btn">
+            Delete All
+          </button>
+        </div>
+        <div class="ToDoTaskListItems">
+          <ul id="tasks-items"></ul>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
