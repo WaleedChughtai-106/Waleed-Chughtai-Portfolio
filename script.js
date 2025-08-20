@@ -153,9 +153,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const dynamicCalculatorAppButton = document.querySelector(
     ".WorkCard5 .workCard-Bttn"
   );
-  const TodoAppReactButton = document.querySelector(
+  const dynamicNewsAppButton = document.querySelector(
     ".WorkCard6 .workCard-Bttn"
   );
+
   netflixButton.addEventListener("click", function () {
     window.open("netflix clone by Waleed Chughtai/index.html", "_blank");
   });
@@ -171,5 +172,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   dynamicCalculatorAppButton.addEventListener("click", function () {
     window.open("Dynamic Calculator/index.html", "_blank");
+  });
+  dynamicNewsAppButton.addEventListener("click", function () {
+    window.open("Dynamic News Website/index.html", "_blank");
   });
 });
