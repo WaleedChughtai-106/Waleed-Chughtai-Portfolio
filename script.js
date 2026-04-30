@@ -118,18 +118,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Form submission handler
   form.addEventListener("submit", function (event) {
-    event.preventDefault();
+  const isNameValid = validateName();
+  const isEmailValid = validateEmail();
+  const isPhoneValid = validatePhone();
+  const isMessageValid = validateMessage();
 
-    const isNameValid = validateName();
-    const isEmailValid = validateEmail();
-    const isPhoneValid = validatePhone();
-    const isMessageValid = validateMessage();
-
-    if (isNameValid && isEmailValid && isPhoneValid && isMessageValid) {
-      alert("Form submitted successfully!");
-      form.reset(); // Clear the form
-    }
-  });
+  if (!(isNameValid && isEmailValid && isPhoneValid && isMessageValid)) {
+    event.preventDefault(); // only stop if invalid
+  }
+});
 
   [nameInput, emailInput, phoneInput, messageInput].forEach((input) => {
     input.addEventListener("input", function () {

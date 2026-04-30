@@ -66,11 +66,9 @@
               />
             </div>
             <div class="Prf-Logos">
-              <img
-                src="logos/github-brands.svg"
-                alt="The Github logo"
-                class="PrfLogoStt"
-              />
+              <a href="https://github.com/WaleedChughtai-106/" target="_blank">
+  <img src="logos/github-brands.svg" alt="GitHub" class="PrfLogoStt" />
+</a>
             </div>
             <div class="Prf-Logos">
               <img src="logos/linkedin-brands.svg" alt="" class="PrfLogoStt" />
@@ -336,46 +334,59 @@
               technologies for more than 6 months and realized this is my place
               in the industry.
             </p>
-            <div class="contact-form-container">
-              <form action="" class="contact-form">
-                <div class="form-inp">
-                  <input
-                    type="text"
-                    name="Name"
-                    id="Name"
-                    placeholder="ENTER YOUR NAME*"
-                  />
-                </div>
-                <div class="form-inp">
-                  <input
-                    type="email"
-                    name="Email"
-                    id="Email"
-                    placeholder="ENTER YOUR EMAIL*"
-                  />
-                </div>
-                <div class="form-inp">
-                  <input
-                    type="text"
-                    name="Password"
-                    id="Password"
-                    placeholder="PHONE NUMBER*"
-                  />
-                </div>
-                <div class="form-inp">
-                  <textarea
-                    name="Message"
-                    id="Message"
-                    placeholder="YOUR MESSAGE*"
-                    rows="5"
-                    cols=""
-                  ></textarea>
-                </div>
-                <div class="submit-button">
-                  <button class="form-submit-button">SUBMIT</button>
-                </div>
-              </form>
-            </div>
+           <div class="contact-form-container">
+  <form action="https://formsubmit.co/wali.chugtai417@gmail.com" method="POST" class="contact-form">
+    
+    <!-- Hidden settings for FormSubmit -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="New Portfolio Message!">
+    <input type="hidden" name="_template" value="table">
+
+    <div class="form-inp">
+      <input
+        type="text"
+        name="Name"
+        id="Name"
+        placeholder="ENTER YOUR NAME*"
+        required
+      />
+    </div>
+
+    <div class="form-inp">
+      <input
+        type="email"
+        name="Email"
+        id="Email"
+        placeholder="ENTER YOUR EMAIL*"
+        required
+      />
+    </div>
+
+    <div class="form-inp">
+      <input
+        type="text"
+        name="Phone"
+        id="Password"
+        placeholder="PHONE NUMBER*"
+        required
+      />
+    </div>
+
+    <div class="form-inp">
+      <textarea
+        name="Message"
+        id="Message"
+        placeholder="YOUR MESSAGE*"
+        rows="5"
+        required
+      ></textarea>
+    </div>
+
+    <div class="submit-button">
+      <button type="submit" class="form-submit-button">SUBMIT</button>
+    </div>
+  </form>
+</div>
           </div>
         </section>
       </main>
