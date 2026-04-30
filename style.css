@@ -2058,3 +2058,33 @@ body {
     filter: invert();
   }
 }
+.social-icons-container a,
+.Prf-Logos a,
+.Social-buttons-Hero a {
+  display: block;
+  width: 100%;
+  height: 5vh;
+}
+
+.social-icons-container img,
+.Prf-Logos img,
+.Social-buttons-Hero img {
+  width: 100%;
+  height: 5vh;
+  object-fit: contain;
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+
+.social-icons-container a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.social-icons-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: invert(1);
+}
