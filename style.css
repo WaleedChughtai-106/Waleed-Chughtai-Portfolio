@@ -924,8 +924,7 @@ body {
   }
   .main-content {
     margin: auto;
-
-    max-width: 1024px;
+    max-width: 100%;
     min-width: auto;
     height: auto;
     width: 100%;
@@ -1251,7 +1250,7 @@ body {
   }
   .hero-right-content {
     width: 65%;
-    height: auto;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -1259,10 +1258,15 @@ body {
 
   .hero-MyImage {
     height: 100%;
+    display: flex;
+    align-items: flex-end;
   }
   .hero-MyImage > img {
-    width: 100%;
     height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: bottom center;
   }
   .logocontainer > img {
     filter: invert();
@@ -1296,8 +1300,7 @@ body {
   }
   .main-content {
     margin: auto;
-    max-width: 1280px;
-    width: 1200px;
+    max-width: 100%;
     min-width: auto;
     height: auto;
     width: 100%;
@@ -1646,7 +1649,7 @@ body {
   }
   .hero-right-content {
     width: 65%;
-    height: auto;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -1654,10 +1657,15 @@ body {
 
   .hero-MyImage {
     height: 100%;
+    display: flex;
+    align-items: flex-end;
   }
   .hero-MyImage > img {
-    width: 100%;
     height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: bottom center;
   }
   .logocontainer > img {
     filter: invert();
@@ -1691,8 +1699,7 @@ body {
   }
   .main-content {
     margin: auto;
-    max-width: max-content;
-    width: 100%;
+    max-width: 100%;
     min-width: auto;
     height: auto;
     width: 100%;
@@ -2041,7 +2048,7 @@ body {
   }
   .hero-right-content {
     width: 65%;
-    height: auto;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -2049,10 +2056,15 @@ body {
 
   .hero-MyImage {
     height: 100%;
+    display: flex;
+    align-items: flex-end;
   }
   .hero-MyImage > img {
-    width: 100%;
     height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: bottom center;
   }
   .logocontainer > img {
     filter: invert();
