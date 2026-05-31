@@ -2604,3 +2604,126 @@ body {
   letter-spacing: -0.02em;
   line-height: 1;
 }
+
+/* ════════════════════════════════════════════
+   BUG FIXES + IMPROVED ANIMATIONS
+════════════════════════════════════════════ */
+
+/* ── Smooth scroll ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Fix: AboutMe button text invisible ── */
+.AboutMeBttn {
+  color: var(--BK-textColor) !important;
+  -webkit-text-fill-color: var(--BK-textColor) !important;
+  background-image: none !important;
+  animation: none !important;
+}
+
+/* ── Fix: skills-Section-heading split-text chars must show on light bg ── */
+.skills-Section-heading .split-char {
+  color: var(--BK-textColor);
+  -webkit-text-fill-color: var(--BK-textColor);
+}
+
+/* ── REPLACED: DDM hover animation ──
+   Old 3D tilt is removed; replaced with:
+   - background fill slides up from bottom
+   - heading gets an animated underline sweep
+   - card lifts cleanly upward
+──────────────────────────────────────── */
+.DDM {
+  padding: 1.2rem 1.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.34, 1.4, 0.64, 1),
+              box-shadow 0.4s ease;
+  cursor: default;
+}
+.DDM::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  transform: translateY(100%);
+  transition: transform 0.45s cubic-bezier(0.34, 1.2, 0.64, 1);
+  z-index: 0;
+}
+.DDM:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+.DDM:hover::before {
+  transform: translateY(0%);
+}
+.DDM > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Underline sweep on heading */
+.prof-content-heading {
+  display: inline-block;
+  position: relative;
+}
+.prof-content-heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--BK-textColor);
+  border-radius: 2px;
+  transition: width 0.45s ease;
+}
+.DDM:hover .prof-content-heading::after {
+  width: 100%;
+}
+
+/* ════════════════════════════════════════════
+   FIX: Invisible split-text headings
+   Root cause: shimmer set -webkit-text-fill-color: transparent
+   which was inherited by all .split-char spans
+════════════════════════════════════════════ */
+
+/* Strip shimmer from all split-text headings */
+.portfolio-heading,
+.skills-Section-heading,
+.contact-heading,
+.passion-heading {
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  animation: none !important;
+}
+
+/* Restore correct text color per section context */
+#portfolio .portfolio-heading,
+#portfolio .portfolio-heading .split-char {
+  color: var(--WT-textColor) !important;
+  -webkit-text-fill-color: var(--WT-textColor) !important;
+}
+
+#mypassion .passion-heading,
+#mypassion .passion-heading .split-char {
+  color: var(--WT-textColor) !important;
+  -webkit-text-fill-color: var(--WT-textColor) !important;
+}
+
+#Skills .skills-Section-heading,
+#Skills .skills-Section-heading .split-char {
+  color: var(--BK-textColor) !important;
+  -webkit-text-fill-color: var(--BK-textColor) !important;
+}
+
+#contact .contact-heading,
+#contact .contact-heading .split-char {
+  color: var(--BK-textColor) !important;
+  -webkit-text-fill-color: var(--BK-textColor) !important;
+}
