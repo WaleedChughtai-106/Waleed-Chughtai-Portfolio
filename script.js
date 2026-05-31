@@ -557,3 +557,83 @@ document.addEventListener("DOMContentLoaded", function () {
     el.appendChild(stamp);
   });
 })();
+
+// ── Fix: Re-observe split-char containers with lower threshold ──
+// (Previous threshold of 0.4 was too high — chars stayed invisible)
+(function () {
+  const splitHeadings = document.querySelectorAll(
+    ".portfolio-heading, .skills-Section-heading, .contact-heading, .passion-heading"
+  );
+
+  const fixObs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          en.target.querySelectorAll(".split-char").forEach((s) => s.classList.add("in"));
+          fixObs.unobserve(en.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  splitHeadings.forEach((el) => fixObs.observe(el));
+})();
+
+// ── Inertia / lerp scroll (slippery momentum scroll) ──
+(function () {
+  // Disable native CSS smooth-scroll so our lerp controls everything
+  document.documentElement.style.scrollBehavior = "auto";
+
+  let currentY = window.scrollY;
+  let targetY  = window.scrollY;
+  const EASE   = 0.07; // lower = more slippery/floaty (try 0.05–0.12)
+
+  function clamp() {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    targetY = Math.max(0, Math.min(targetY, max));
+  }
+
+  // ── Mouse wheel ──
+  window.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    targetY += e.deltaY;
+    clamp();
+  }, { passive: false });
+
+  // ── Touch / mobile ──
+  let lastTY = 0;
+  window.addEventListener("touchstart", (e) => {
+    lastTY = e.touches[0].clientY;
+  }, { passive: true });
+  window.addEventListener("touchmove", (e) => {
+    const dy = lastTY - e.touches[0].clientY;
+    lastTY = e.touches[0].clientY;
+    targetY += dy;
+    clamp();
+  }, { passive: true });
+
+  // ── Navbar anchor clicks ──
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const target = document.getElementById(a.getAttribute("href").slice(1));
+      if (target) {
+        e.preventDefault();
+        targetY = target.getBoundingClientRect().top + window.scrollY - 20;
+        clamp();
+      }
+    });
+  });
+
+  // ── Lerp loop ──
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function loop() {
+    currentY = lerp(currentY, targetY, EASE);
+    if (Math.abs(targetY - currentY) < 0.5) currentY = targetY;
+    window.scrollTo(0, currentY);
+    requestAnimationFrame(loop);
+  }
+
+  loop();
+})();
