@@ -2206,3 +2206,401 @@ body {
   object-fit: contain;
   filter: invert(1);
 }
+/* ════════════════════════════════════════════
+   3D ANIMATIONS
+════════════════════════════════════════════ */
+
+/* ── Scroll reveal base states ── */
+.reveal {
+  opacity: 0;
+  transform: perspective(900px) translateY(45px) rotateX(9deg);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+  will-change: opacity, transform;
+}
+.reveal-left {
+  opacity: 0;
+  transform: perspective(900px) translateX(-60px) rotateY(12deg);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+  will-change: opacity, transform;
+}
+.reveal-right {
+  opacity: 0;
+  transform: perspective(900px) translateX(60px) rotateY(-12deg);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+  will-change: opacity, transform;
+}
+.reveal.visible,
+.reveal-left.visible,
+.reveal-right.visible {
+  opacity: 1;
+  transform: perspective(900px) translateY(0) translateX(0) rotateX(0deg) rotateY(0deg);
+}
+
+/* ── Stagger delays ── */
+.reveal-d1 { transition-delay: 0.08s; }
+.reveal-d2 { transition-delay: 0.18s; }
+.reveal-d3 { transition-delay: 0.28s; }
+.reveal-d4 { transition-delay: 0.38s; }
+.reveal-d5 { transition-delay: 0.48s; }
+.reveal-d6 { transition-delay: 0.58s; }
+
+/* ── Floating hero image ── */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-16px); }
+}
+.hero-MyImage img {
+  animation: floatY 5s ease-in-out infinite;
+}
+
+/* ── Skill card 3D hover pop ── */
+.skill-cards {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+.skill-cards:hover {
+  transform: perspective(500px) translateZ(20px) scale(1.07);
+  box-shadow: 0 14px 32px rgba(255, 255, 255, 0.07);
+}
+
+/* ── Professionality DDM cards 3D hover ── */
+.DDM {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.DDM:hover {
+  transform: perspective(700px) rotateY(-5deg) translateZ(14px);
+  box-shadow: -8px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Portfolio card: smooth tilt reset ── */
+.pf-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ════════════════════════════════════════════
+   EXTRA ANIMATIONS
+════════════════════════════════════════════ */
+
+/* ── Custom cursor ── */
+.custom-cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: background 0.2s ease, transform 0.15s ease;
+  mix-blend-mode: difference;
+}
+.custom-cursor-ring {
+  position: fixed;
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease;
+}
+.custom-cursor.hovered {
+  transform: translate(-50%, -50%) scale(2.5);
+  background: #c4c4c4;
+}
+.custom-cursor-ring.hovered {
+  width: 52px;
+  height: 52px;
+  opacity: 0.35;
+}
+
+/* ── Navbar glass on scroll ── */
+#Navbar {
+  transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+}
+#Navbar.scrolled {
+  background: rgba(0, 0, 0, 0.72) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Button ripple ── */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.32);
+  transform: scale(0);
+  animation: rippleOut 0.6s linear forwards;
+  pointer-events: none;
+}
+@keyframes rippleOut {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* ── Button glow inner shine ── */
+.workCard-Bttn {
+  position: relative;
+  overflow: hidden;
+}
+.workCard-Bttn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.3) 0%, transparent 65%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.workCard-Bttn:hover::after {
+  opacity: 1;
+}
+.workCard-Bttn:active {
+  transform: perspective(300px) scale(0.96) translateZ(-4px);
+}
+
+/* ── Social icons bounce ── */
+.Prf-Logos,
+.Social-buttons-Hero,
+.social-icons-container {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.Prf-Logos:hover,
+.Social-buttons-Hero:hover,
+.social-icons-container:hover {
+  transform: translateY(-9px) scale(1.18);
+}
+
+/* ── Contact input 3D focus lift ── */
+.form-inp input,
+.form-inp textarea {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.form-inp input:focus,
+.form-inp textarea:focus {
+  transform: perspective(600px) translateZ(10px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  outline: none;
+}
+
+/* ── Animated gradient border on pf-card hover ── */
+.pf-card {
+  position: relative;
+}
+.pf-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 16px;
+  background: linear-gradient(270deg, rgba(255,255,255,0.18), rgba(150,150,150,0.5), rgba(255,255,255,0.18));
+  background-size: 300% 300%;
+  animation: gradBorder 4s ease infinite;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.pf-card:hover::before {
+  opacity: 1;
+}
+@keyframes gradBorder {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Heading shimmer effect ── */
+@keyframes shimmerText {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.portfolio-heading,
+.skills-Section-heading,
+.contact-heading {
+  background: linear-gradient(90deg, #fff 35%, #888 50%, #fff 65%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmerText 5s linear infinite;
+}
+
+/* ── Passion section gradient pulse ── */
+@keyframes passionPulse {
+  0%, 100% { background-color: #111; }
+  50%       { background-color: #1c1c1c; }
+}
+#mypassion {
+  animation: passionPulse 6s ease-in-out infinite;
+}
+
+/* ── Particle canvas (added via JS) sits behind content ── */
+#Hero, #Hero2 {
+  position: relative;
+}
+
+/* ════════════════════════════════════════════
+   MODERN ANIMATIONS v3
+════════════════════════════════════════════ */
+
+/* ── Preloader ── */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 9999999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.preloader-name {
+  font-size: clamp(1.4rem, 4vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: 0.6rem;
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #fff;
+  width: 0;
+  animation: typeIn 1.2s steps(14) 0.3s forwards, blinkCaret 0.6s step-end infinite;
+}
+@keyframes typeIn {
+  to { width: 100%; }
+}
+@keyframes blinkCaret {
+  50% { border-color: transparent; }
+}
+.preloader-bar-wrap {
+  width: clamp(160px, 40vw, 320px);
+  height: 2px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.preloader-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #555, #fff, #555);
+  background-size: 200% 100%;
+  animation: barFill 1.6s ease forwards, barShimmer 1s linear infinite;
+}
+@keyframes barFill    { to { width: 100%; } }
+@keyframes barShimmer { to { background-position: 200% 0; } }
+
+/* ── Scroll progress bar ── */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #555, #fff, #555);
+  background-size: 200% 100%;
+  z-index: 999997;
+  animation: barShimmer 2s linear infinite;
+  transition: width 0.1s linear;
+}
+
+/* ── Spotlight on dark sections ── */
+.section-spotlight {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.055) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  transition: left 0.06s linear, top 0.06s linear;
+}
+
+/* ── Magnetic button wrapper ── */
+.mag-wrap {
+  display: inline-block;
+}
+
+/* ── Card glare ── */
+.card-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+/* ── Typewriter cursor on hero ── */
+.typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: #fff;
+  margin-left: 3px;
+  vertical-align: middle;
+  animation: blinkCaret 0.7s step-end infinite;
+}
+
+/* ── Split-text char animation ── */
+.split-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px) rotateX(60deg);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.split-char.in {
+  opacity: 1;
+  transform: translateY(0) rotateX(0deg);
+}
+
+/* ── Active nav link ── */
+.list-items a.nav-active {
+  color: var(--WT-textColor);
+  border-bottom: 1px solid var(--WT-textColor);
+  padding-bottom: 2px;
+  transition: border-bottom 0.3s ease;
+}
+
+/* ── Tilt-shine glow on skill section heading border ── */
+.skills-Section-heading {
+  position: relative;
+  overflow: hidden;
+}
+.skills-Section-heading::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: rgba(255,255,255,0.12);
+  transform: skewX(-20deg);
+  animation: headingSweep 4s ease-in-out infinite;
+}
+@keyframes headingSweep {
+  0%   { left: -75%; }
+  40%  { left: 125%; }
+  100% { left: 125%; }
+}
+
+/* ── Section number watermark ── */
+.section-num {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1rem;
+  font-size: clamp(4rem, 10vw, 9rem);
+  font-weight: 900;
+  color: rgba(255,255,255,0.03);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
