@@ -580,40 +580,36 @@ document.addEventListener("DOMContentLoaded", function () {
   splitHeadings.forEach((el) => fixObs.observe(el));
 })();
 
-// ── Inertia / lerp scroll (slippery momentum scroll) ──
+// ── Inertia / lerp scroll (desktop only — mobile uses native inertia) ──
 (function () {
-  // Disable native CSS smooth-scroll so our lerp controls everything
+  // Mobile devices already have smooth native inertia — skip lerp entirely
+  const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+  if (isTouchDevice) {
+    // Keep smooth scroll on mobile for anchor links
+    document.documentElement.style.scrollBehavior = "smooth";
+    return;
+  }
+
+  // ── Desktop lerp scroll ──
   document.documentElement.style.scrollBehavior = "auto";
 
   let currentY = window.scrollY;
   let targetY  = window.scrollY;
-  const EASE   = 0.07; // lower = more slippery/floaty (try 0.05–0.12)
+  const EASE   = 0.07;
 
   function clamp() {
     const max = document.documentElement.scrollHeight - window.innerHeight;
     targetY = Math.max(0, Math.min(targetY, max));
   }
 
-  // ── Mouse wheel ──
+  // Mouse wheel
   window.addEventListener("wheel", (e) => {
     e.preventDefault();
     targetY += e.deltaY;
     clamp();
   }, { passive: false });
 
-  // ── Touch / mobile ──
-  let lastTY = 0;
-  window.addEventListener("touchstart", (e) => {
-    lastTY = e.touches[0].clientY;
-  }, { passive: true });
-  window.addEventListener("touchmove", (e) => {
-    const dy = lastTY - e.touches[0].clientY;
-    lastTY = e.touches[0].clientY;
-    targetY += dy;
-    clamp();
-  }, { passive: true });
-
-  // ── Navbar anchor clicks ──
+  // Navbar anchor clicks
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {
       const target = document.getElementById(a.getAttribute("href").slice(1));
@@ -625,7 +621,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // ── Lerp loop ──
+  // Lerp loop
   function lerp(a, b, t) { return a + (b - a) * t; }
 
   function loop() {
