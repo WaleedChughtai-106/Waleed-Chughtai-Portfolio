@@ -609,12 +609,17 @@ document.addEventListener("DOMContentLoaded", function () {
     clamp();
   }, { passive: false });
 
-  // Navbar anchor clicks
+  // Anchor clicks (including back-to-top href="#")
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {
-      const target = document.getElementById(a.getAttribute("href").slice(1));
+      const href = a.getAttribute("href");
+      e.preventDefault();
+      if (href === "#") {
+        targetY = 0; // back to top
+        return;
+      }
+      const target = document.getElementById(href.slice(1));
       if (target) {
-        e.preventDefault();
         targetY = target.getBoundingClientRect().top + window.scrollY - 20;
         clamp();
       }
